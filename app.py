@@ -1,15 +1,24 @@
 import os
-from flask import Flask
+from flask import Flask, render_template, redirect, request, url_for
+from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
+
 
 app = Flask(__name__)
 
+app.config["MONGO_DBNAME"] = 'just-a-thought'
+app.config["MONGO_URI"] = 'mongodb+srv://root:KcX1tFSPouVw2HAO@milestone-3.fjn9g.mongodb.net/just-a-thought?retryWrites=true&w=majority'
+
+mongo = PyMongo(app)
+
 
 @app.route('/')
-def test():
-    return "Hello Again iii times"
+@app.route('/thoughts')
+def thoughts():
+    return render_template("thoughts.html", thoughts = mongo.db.thoughts.find())
 
 
-if (__name__) == '__main__':
+if(__name__) == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
             debug=True)
