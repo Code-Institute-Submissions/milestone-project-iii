@@ -1,9 +1,8 @@
 {% extends 'base.html' %}
-
-{% for thought in thoughts %}
-
- {{thoughts.title}}
- {{thoughts.content}}
- {{thoughts.name}}
-
-{% endfor %}
+{% block content %}
+    {% for x in thoughts %}
+        {{x.title}}
+        {{x.content}}
+        {{x.name}}
+    {% endfor %}
+{% endblock %}
