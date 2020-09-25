@@ -13,9 +13,9 @@ mongo = PyMongo(app)
 
 
 @app.route('/')
-@app.route('/thoughts')
-def thoughts():
-    return render_template("thoughts.html", thoughts = mongo.db.thoughts.find())
+@app.route('/add_thought')
+def add_thought():
+    return render_template("add_thought.html", thoughts = mongo.db.thoughts.find())
 
 
 if(__name__) == '__main__':
