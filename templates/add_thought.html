@@ -1,17 +1,25 @@
-{% extends 'base.html' %} {% block content %} {% for thought in thoughts %}
-<div class="card">
-  <div class="card-header">
-    {{thought.title}}
+{% extends 'base.html' %} {% block content %}
+<form action="{{ url_for('insert_thoughts') }}" method="POST">
+  <div class="form-group">
+    <label>Title</label>
+    <input type="text" class="form-control" id="title" name="title" placeholder="Title" />
   </div>
-  <div class="card-body">
-    <blockquote class="blockquote mb-0">
-      <p>
-        {{thought.content}}
-      </p>
-      <footer class="blockquote-footer">
-        <cite title="Source Title"> {{thought.name}}</cite>
-      </footer>
-    </blockquote>
+
+  <div class="form-group">
+    <label>Qoute</label>
+    <textarea
+      class="form-control"
+      id="content" name="content"
+      placeholder="Content"
+      rows="3"
+    ></textarea>
   </div>
-</div>
-{% endfor %} {% endblock %}
+
+  <div class="form-group">
+    <label>Name</label>
+    <input type="text" class="form-control" id="name" name="name" placeholder="Name" />
+  </div>
+  <button type="submit" class="btn btn-primary mb-2">Submit</button>
+</form>
+
+{% endblock %}

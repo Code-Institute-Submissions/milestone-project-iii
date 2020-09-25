@@ -13,9 +13,19 @@ mongo = PyMongo(app)
 
 
 @app.route('/')
+@app.route('/get_thoughts')
+def get_thoughts():
+    return render_template("get_thoughts.html", thoughts = mongo.db.thoughts.find())
+
 @app.route('/add_thought')
 def add_thought():
-    return render_template("add_thought.html", thoughts = mongo.db.thoughts.find())
+    return render_template("add_thought.html", thoughts=mongo.db.thoughts.find())
+
+@app.route('/insert_thoughts', methods=['POST'])
+def insert_thoughts():
+    thoughts =  mongo.db.thoughts
+    thoughts.insert_one(request.form.to_dict())
+    return redirect(url_for('get_thoughts'))
 
 
 if(__name__) == '__main__':
