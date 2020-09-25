@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block content %} {% for thought in thoughts %}
+<div class="card">
+  <div class="card-header">
+    {{thought.title}}
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>
+        {{thought.content}}
+      </p>
+      <footer class="blockquote-footer">
+        <cite title="Source Title"> {{thought.name}}</cite>
+      </footer>
+    </blockquote>
+  </div>
+</div>
+{% endfor %} {% endblock %}
