@@ -4,7 +4,7 @@
     {{thought.title}}
   </div>
   <div class="card-body">
-    <blockquote class="blockquote mb-0">
+    <blockquote class="blockquote">
       <p>
         {{thought.content}}
       </p>
@@ -14,4 +14,6 @@
     </blockquote>
   </div>
 </div>
+<a href="{{ url_for('edit_thought', thought_id=thought._id) }}" class="btn btn-info" role="button" aria-pressed="true">Edit</a>
+<a href="#" class="btn btn-danger" role="button" aria-pressed="true">Delete</a>
 {% endfor %} {% endblock %}

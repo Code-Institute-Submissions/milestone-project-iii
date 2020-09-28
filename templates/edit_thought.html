@@ -1,5 +1,8 @@
 {% extends 'base.html' %} {% block content %}
-<form action="{{ url_for('insert_thoughts') }}" method="POST">
+<form
+  action="{{ url_for('update_thought', thought_id=thought._id) }}"
+  method="POST"
+>
   <div class="form-group">
     <label>Title</label>
     <input
@@ -7,7 +10,7 @@
       class="form-control"
       id="title"
       name="title"
-      placeholder="Title"
+      value="{{thought.title}}"
     />
   </div>
 
@@ -17,7 +20,7 @@
       class="form-control"
       id="content"
       name="content"
-      placeholder="Content"
+      value="{{thought.content}}"
       rows="3"
     ></textarea>
   </div>
@@ -29,10 +32,10 @@
       class="form-control"
       id="name"
       name="name"
-      placeholder="Name"
+      value="{{thought.name}}"
     />
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary">Done</button>
   <a
     href="{{url_for('get_thoughts')}}"
     class="btn btn-danger"
