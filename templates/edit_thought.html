@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% block content %}
+<form
+  action="{{ url_for('update_thought', thought_id=thought._id) }}"
+  method="POST"
+>
+  <div class="form-group">
+    <label>Title</label>
+    <input
+      type="text"
+      class="form-control"
+      id="title"
+      name="title"
+      value="{{thought.title}}"
+    />
+  </div>
+
+  <div class="form-group">
+    <label>Quote</label>
+    <textarea class="form-control" id="content" name="content" rows="3">
+{{thought.content}}</textarea
+    >
+  </div>
+
+  <div class="form-group">
+    <label>Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      name="name"
+      value="{{thought.name}}"
+    />
+  </div>
+  <button type="submit" class="btn btn-primary">Done</button>
+  <a href="{{url_for('index')}}" class="btn btn-danger" role="button"
+    >Cancel</a
+  >
+</form>
+
+{% endblock %}
