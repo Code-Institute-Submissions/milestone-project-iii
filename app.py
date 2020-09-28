@@ -13,9 +13,8 @@ mongo = PyMongo(app)
 
 
 @app.route('/')
-@app.route('/get_thoughts')
-def get_thoughts():
-    return render_template("get_thoughts.html", thoughts=mongo.db.thoughts.find())
+def index():
+    return render_template("index.html", thoughts=mongo.db.thoughts.find())
 
 
 @app.route('/add_thought')
@@ -27,7 +26,7 @@ def add_thought():
 def insert_thoughts():
     thoughts = mongo.db.thoughts
     thoughts.insert_one(request.form.to_dict())
-    return redirect(url_for('get_thoughts'))
+    return redirect(url_for('index'))
 
 
 @app.route('/edit_thought/<thought_id>')
@@ -45,7 +44,18 @@ def update_thought(thought_id):
         'content': request.form.get('content'),
         'name': request.form.get('name'),
     })
-    return redirect(url_for('get_thoughts'))
+    return redirect(url_for('index'))
+
+
+@app.route('/delete_thought/<thought_id>')
+def delete_thought(thought_id):
+    mongo.db.thoughts.remove({'_id': ObjectId(thought_id)})
+    return redirect(url_for('index'))
+
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 
 if(__name__) == '__main__':

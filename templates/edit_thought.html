@@ -16,13 +16,9 @@
 
   <div class="form-group">
     <label>Quote</label>
-    <textarea
-      class="form-control"
-      id="content"
-      name="content"
-      value="{{thought.content}}"
-      rows="3"
-    ></textarea>
+    <textarea class="form-control" id="content" name="content" rows="3">
+{{thought.content}}</textarea
+    >
   </div>
 
   <div class="form-group">
@@ -36,11 +32,7 @@
     />
   </div>
   <button type="submit" class="btn btn-primary">Done</button>
-  <a
-    href="{{url_for('get_thoughts')}}"
-    class="btn btn-danger"
-    role="button"
-    aria-pressed="true"
+  <a href="{{url_for('index')}}" class="btn btn-danger" role="button"
     >Cancel</a
   >
 </form>
