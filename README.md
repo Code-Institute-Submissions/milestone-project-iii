@@ -47,7 +47,8 @@ I wanted to have many more features like sharing your thought in different socia
 * All the links about page leads to respective sites.
 * Add a thought link leads to posting page where you can add a post.
 * All the input field must be fill before submitting.
-* The website is responsive and works fine in desktops and mobiles view.
+
+The website is responsive and works fine in desktops and mobiles view.
 When I was checking all the links and buttons, I found out there was a problem with add a thought link and it was wrong route. It was suppose to be add_thought route but I put get_thought route which was change into index to be recognize as landing page by hosting platform. 
 
 ### Deployment
