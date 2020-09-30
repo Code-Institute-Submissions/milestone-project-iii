@@ -1,6 +1,9 @@
 # Quote your thought
 People have thoughts. You have it, I have it why not let them through writing and posting. You can write short stories, poems, lyrics of our own, opinion on something or just a thought. 
-http://milestone-project-iii.herokuapp.com/
+
+Website link : http://milestone-project-iii.herokuapp.com/
+
+Github link : 
 
 ### UX
 For this project I wanted to have minimal things like uses of color and font to be simple.  
