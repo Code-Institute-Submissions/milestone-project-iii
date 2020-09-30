@@ -7,9 +7,9 @@ from bson.objectid import ObjectId
 # flask app named app
 app = Flask(__name__)
 
-# MongoDB database name and uri to connect/ fetching data
-app.config["MONGO_DBNAME"] = 'just-a-thought'
-app.config["MONGO_URI"] = 'mongodb+srv://thoughts-thought:thought123@milestone-3.fjn9g.mongodb.net/just-a-thought?retryWrites=true&w=majority'
+# MongoDB database name and uri to connect/ fetching data( Replacing database name with 'YourDataName' and Password with 'YourPass' for security purpose)
+app.config["MONGO_DBNAME"] = 'YourDataName'
+app.config["MONGO_URI"] = 'mongodb+srv://YourPass:thought123@milestone-3.fjn9g.mongodb.net/YourDataName?retryWrites=true&w=majority'
 
 mongo = PyMongo(app)
 
