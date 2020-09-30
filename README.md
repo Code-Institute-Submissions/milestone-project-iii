@@ -3,8 +3,6 @@ People have thoughts. You have it, I have it why not let them through writing an
 
 Website link : http://milestone-project-iii.herokuapp.com/
 
-Github link : 
-
 ### UX
 For this project I wanted to have minimal things like uses of color and font to be simple.  
 This section provide a list of User Stories, with the following below:
