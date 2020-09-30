@@ -1,5 +1,6 @@
 # Quote your thought
 People have thoughts. You have it, I have it why not let them through writing and posting. You can write short stories, poems, lyrics of our own, opinion on something or just a thought. 
+http://milestone-project-iii.herokuapp.com/
 
 ### UX
 For this project I wanted to have minimal things like uses of color and font to be simple.  
@@ -60,7 +61,9 @@ I had problem during my deployment. When I try to push heroku using "git push he
 I used MongoDB database which store data and you can manage data and data types. I have to make database and its collection and I had to setup IP and PORT address to connect from database to my app. My collection or database structure is like this:
 
 title : "Thoughts"
-content : "A new idea is an old idea but with different perspective"
+
+content : "A new idea is an old idea but with a different perspective"
+
 name : " A-man"
 
 To deploy my app locally you need code editor, heroku hosting platform  and MongoDB.  Make sure you have heroku and MongoDB account and database structure which is above. 
